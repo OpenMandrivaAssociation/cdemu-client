@@ -27,6 +27,7 @@ BuildRoot:	%{_tmppath}/%{name}-root
 BuildArch:	noarch
 BuildRequires:	python
 BuildRequires:	intltool
+BuildRequires:	glib-gettextize
 Requires:	python-dbus
 Requires:	cdemu-daemon
 Obsoletes:	cdemu < 0.9
