@@ -24,7 +24,7 @@ Group:		Emulators
 License:	GPLv2+
 URL:		http://cdemu.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-root
-BuildArch:	noarch
+#BuildArch:	noarch
 BuildRequires:	python
 BuildRequires:	intltool
 BuildRequires:	glib-gettextize
