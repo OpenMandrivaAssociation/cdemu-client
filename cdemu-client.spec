@@ -1,35 +1,21 @@
 
-%define version 1.1.0
-%define snapshot 0
-%define rel	2
-
-%if 0
-# Update commands:
-REV=$(svn info https://cdemu.svn.sourceforge.net/svnroot/cdemu/trunk/cdemu-client | sed -ne 's/^Last Changed Rev: //p')
-svn export -r $REV https://cdemu.svn.sourceforge.net/svnroot/cdemu/trunk/cdemu-client cdemu-client-$REV
-tar -cjf cdemu-client-$REV.tar.bz2 cdemu-client-$REV
-%endif
+%define version 1.2.0
+%define rel	1
 
 Name:		cdemu-client
 Version:	%version
 Summary:	Command-line client for controlling CDEmu daemon
-%if %snapshot
-Release:	%mkrel 1.svn%snapshot.%rel
-Source:		%name-%snapshot.tar.bz2
-%else
 Release:	%mkrel %rel
 Source:		http://downloads.sourceforge.net/cdemu/%name-%version.tar.bz2
-%endif
 Group:		Emulators
 License:	GPLv2+
 URL:		http://cdemu.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-root
-#BuildArch:	noarch
 BuildRequires:	python
 BuildRequires:	intltool
 BuildRequires:	glib-gettextize
 Requires:	python-dbus
-Requires:	cdemu-daemon
+Requires:	cdemu-daemon >= %version
 Obsoletes:	cdemu < 0.9
 Obsoletes:	python-cdemu < 0.9
 
@@ -43,16 +29,9 @@ the CDEmu daemon, such as loading and unloading devices, displaying
 devices' status and retrieving/setting devices' debug masks.
 
 %prep
-%if %snapshot
-%setup -q -n %name-%snapshot
-%else
 %setup -q
-%endif
 
 %build
-%if %snapshot
-./autogen.sh
-%endif
 %configure2_5x
 %make
 
