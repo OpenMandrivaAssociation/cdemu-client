@@ -1,6 +1,6 @@
 
 %define version 1.3.0
-%define rel	1
+%define rel	2
 
 Name:		cdemu-client
 Version:	%version
@@ -18,6 +18,7 @@ Requires:	python-dbus
 Requires:	cdemu-daemon >= %{version}
 Obsoletes:	cdemu < 0.9
 Obsoletes:	python-cdemu < 0.9
+%py_requires
 
 %description
 This is cdemu-client, a simple command-line client for controlling
