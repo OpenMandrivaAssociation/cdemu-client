@@ -1,12 +1,12 @@
 
-%define version 1.2.0
+%define version 1.3.0
 %define rel	1
 
 Name:		cdemu-client
 Version:	%version
 Summary:	Command-line client for controlling CDEmu daemon
 Release:	%mkrel %rel
-Source:		http://downloads.sourceforge.net/cdemu/%name-%version.tar.bz2
+Source:		http://downloads.sourceforge.net/cdemu/%name-%version.tar.gz
 Group:		Emulators
 License:	GPLv2+
 URL:		http://cdemu.sourceforge.net/
@@ -15,7 +15,7 @@ BuildRequires:	python
 BuildRequires:	intltool
 BuildRequires:	glib-gettextize
 Requires:	python-dbus
-Requires:	cdemu-daemon >= %version
+Requires:	cdemu-daemon >= %{version}
 Obsoletes:	cdemu < 0.9
 Obsoletes:	python-cdemu < 0.9
 
@@ -48,5 +48,6 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc README AUTHORS
 %{_bindir}/cdemu
+# not used outside this package, for now:
 %{python_sitelib}/cdemu
 %{_mandir}/man1/cdemu.1*
