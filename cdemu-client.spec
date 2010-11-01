@@ -1,6 +1,6 @@
 
 %define version 1.3.0
-%define rel	2
+%define rel	3
 
 Name:		cdemu-client
 Version:	%version
