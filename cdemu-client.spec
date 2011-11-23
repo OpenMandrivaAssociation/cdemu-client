@@ -1,16 +1,11 @@
-
-%define version 1.3.0
-%define rel	3
-
 Name:		cdemu-client
-Version:	%version
+Version:	1.4.0
 Summary:	Command-line client for controlling CDEmu daemon
-Release:	%mkrel %rel
+Release:	1
 Source:		http://downloads.sourceforge.net/cdemu/%name-%version.tar.gz
 Group:		Emulators
 License:	GPLv2+
 URL:		http://cdemu.sourceforge.net/
-BuildRoot:	%{_tmppath}/%{name}-root
 BuildRequires:	python
 BuildRequires:	intltool
 BuildRequires:	glib-gettextize
@@ -37,18 +32,13 @@ devices' status and retrieving/setting devices' debug masks.
 %make
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
 %find_lang %name
-
-%clean
-rm -rf %{buildroot}
 
 %files -f %name.lang
 %defattr(-,root,root)
 %doc README AUTHORS
 %{_bindir}/cdemu
 # not used outside this package, for now:
-%{python_sitelib}/cdemu
 %{_mandir}/man1/cdemu.1*
