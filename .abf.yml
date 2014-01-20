@@ -1,2 +1,4 @@
+removed_sources:
+  cdemu-client-1.5.0.tar.bz2: 368320948eee567a09b24247b77ff42ea93d0497
 sources:
-  "cdemu-client-1.5.0.tar.bz2": 368320948eee567a09b24247b77ff42ea93d0497
+  cdemu-client-2.0.0.tar.bz2: 8740c0d2585eabdea5c54f1f1a919cb824d01802

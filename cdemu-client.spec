@@ -1,8 +1,8 @@
 Name:		cdemu-client
-Version:	1.5.0
+Version:	2.0.0
 Summary:	Command-line client for controlling CDEmu daemon
 Release:	1
-Source0:	http://downloads.sourceforge.net/project/cdemu/%{name}/%name-%version.tar.bz2
+Source0:	http://downloads.sourceforge.net/cdemu/%{name}-%{version}.tar.bz2
 Group:		Emulators
 License:	GPLv2+
 URL:		http://cdemu.sourceforge.net/
@@ -37,7 +37,6 @@ devices' status and retrieving/setting devices' debug masks.
 %find_lang %name
 
 %files -f %name.lang
-%defattr(-,root,root)
 %doc README AUTHORS
 %{_bindir}/cdemu
 %{_mandir}/man1/cdemu.1*
@@ -93,4 +92,5 @@ devices' status and retrieving/setting devices' debug masks.
 * Wed Apr 23 2008 Anssi Hannula <anssi@mandriva.org> 1.0.0-1.svn299.1mdv2009.0
 + Revision: 197017
 - initial Mandriva release
+
 
