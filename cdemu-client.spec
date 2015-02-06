@@ -1,7 +1,7 @@
 Summary:	Command-line client for controlling CDEmu daemon
 Name:		cdemu-client
 Version:	2.1.1
-Release:	1
+Release:	2
 Group:		Emulators
 License:	GPLv2+
 Url:		http://cdemu.sourceforge.net/
