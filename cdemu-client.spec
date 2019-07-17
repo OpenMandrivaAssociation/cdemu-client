@@ -9,7 +9,9 @@ Source0:	http://downloads.sourceforge.net/cdemu/%{name}-%{version}.tar.bz2
 BuildRequires:	cmake
 BuildRequires:	intltool
 BuildRequires:	glib-gettextize
-Requires:	python-dbus
+BuildRequires:	python2
+BuildRequires:	pkgconfig(bash-completion)
+Requires:	python2-dbus
 Requires:	cdemu-daemon >= %{version}
 BuildArch:	noarch
 
@@ -36,10 +38,10 @@ devices' status and retrieving/setting devices' debug masks.
 
 %build
 %cmake -DPOST_INSTALL_HOOKS:BOOL=OFF
-%make
+%make_build
 
 %install
-%makeinstall_std -C build
+%make_install -C build
 
 %find_lang cdemu
 
