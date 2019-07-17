@@ -29,6 +29,7 @@ devices' status and retrieving/setting devices' debug masks.
 %{_datadir}/bash-completion/completions/cdemu
 %{_bindir}/cdemu
 %{_datadir}/applications/%{name}.desktop
+%{_datadir}/pixmaps/cdemu-client.svg
 %{_mandir}/man1/cdemu.1*
 
 #----------------------------------------------------------------------------
