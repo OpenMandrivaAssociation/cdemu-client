@@ -1,7 +1,7 @@
 Summary:	Command-line client for controlling CDEmu daemon
 Name:		cdemu-client
-Version:	2.1.1
-Release:	2
+Version:	3.2.1
+Release:	1
 Group:		Emulators
 License:	GPLv2+
 Url:		http://cdemu.sourceforge.net/
@@ -9,7 +9,9 @@ Source0:	http://downloads.sourceforge.net/cdemu/%{name}-%{version}.tar.bz2
 BuildRequires:	cmake
 BuildRequires:	intltool
 BuildRequires:	glib-gettextize
-Requires:	python-dbus
+BuildRequires:	python2
+BuildRequires:	pkgconfig(bash-completion)
+Requires:	python2-dbus
 Requires:	cdemu-daemon >= %{version}
 BuildArch:	noarch
 
@@ -24,9 +26,10 @@ devices' status and retrieving/setting devices' debug masks.
 
 %files -f cdemu.lang
 %doc README AUTHORS COPYING NEWS ChangeLog
-%{_sysconfdir}/bash_completion.d/cdemu-client
+%{_datadir}/bash-completion/completions/cdemu
 %{_bindir}/cdemu
 %{_datadir}/applications/%{name}.desktop
+%{_datadir}/pixmaps/cdemu-client.svg
 %{_mandir}/man1/cdemu.1*
 
 #----------------------------------------------------------------------------
@@ -36,10 +39,10 @@ devices' status and retrieving/setting devices' debug masks.
 
 %build
 %cmake -DPOST_INSTALL_HOOKS:BOOL=OFF
-%make
+%make_build
 
 %install
-%makeinstall_std -C build
+%make_install -C build
 
 %find_lang cdemu
 
