@@ -26,7 +26,7 @@ devices' status and retrieving/setting devices' debug masks.
 
 %files -f cdemu.lang
 %doc README AUTHORS COPYING NEWS ChangeLog
-%{_sysconfdir}/bash_completion.d/cdemu-client
+%{_datadir}/bash-completion/completions/cdemu
 %{_bindir}/cdemu
 %{_datadir}/applications/%{name}.desktop
 %{_mandir}/man1/cdemu.1*
