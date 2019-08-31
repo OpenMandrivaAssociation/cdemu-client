@@ -1,6 +1,6 @@
 Summary:	Command-line client for controlling CDEmu daemon
 Name:		cdemu-client
-Version:	3.2.1
+Version:	3.2.3
 Release:	1
 Group:		Emulators
 License:	GPLv2+
@@ -9,9 +9,9 @@ Source0:	http://downloads.sourceforge.net/cdemu/%{name}-%{version}.tar.bz2
 BuildRequires:	cmake
 BuildRequires:	intltool
 BuildRequires:	glib-gettextize
-BuildRequires:	python2
+BuildRequires:	python
 BuildRequires:	pkgconfig(bash-completion)
-Requires:	python2-dbus
+Requires:	python-dbus
 Requires:	cdemu-daemon >= %{version}
 BuildArch:	noarch
 
