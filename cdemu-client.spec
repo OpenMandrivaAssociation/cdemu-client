@@ -1,6 +1,6 @@
 Summary:	Command-line client for controlling CDEmu daemon
 Name:		cdemu-client
-Version:	3.2.4
+Version:	3.2.5
 Release:	1
 Group:		Emulators
 License:	GPLv2+
@@ -35,7 +35,7 @@ devices' status and retrieving/setting devices' debug masks.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %cmake -DPOST_INSTALL_HOOKS:BOOL=OFF
@@ -45,4 +45,3 @@ devices' status and retrieving/setting devices' debug masks.
 %make_install -C build
 
 %find_lang cdemu
-
